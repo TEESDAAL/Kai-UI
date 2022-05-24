@@ -48,7 +48,7 @@
             "is_vegetarian": false,
             "is_vegan": false,
             "contains_sugar": false,
-            "image_path": "./images/chicken_sushi.jpg"
+            "image_path": "./images/sushi/chicken_sushi.jpg"
         },
         {
             "name": "Tuna (3pc)",
@@ -56,7 +56,7 @@
             "is_vegetarian": false,
             "is_vegan": false,
             "contains_sugar": false,
-            "image_path": "./images/tuna_sushi.jpg"
+            "image_path": "./images/sushi/tuna_sushi.jpg"
         },
         {
             "name": "Avocado (3pc)",
@@ -64,7 +64,7 @@
             "is_vegetarian": true,
             "is_vegan": true,
             "contains_sugar": false,
-            "image_path": "./images/avocado_sushi.jpg"
+            "image_path": "./images/sushi/avocado_sushi.jpg"
         },
         {
             "name": "Chicken rice bowl",
@@ -72,7 +72,7 @@
             "is_vegetarian": false,
             "is_vegan": false,
             "contains_sugar": false,
-            "image_path": "./images/chicken_rice_bowl.jpg"
+            "image_path": "./images/sushi/chicken_rice_bowl.jpg"
         },
         {
             "name": "Vegetarian rice bowl",
@@ -80,7 +80,7 @@
             "is_vegetarian": true,
             "is_vegan": true,
             "contains_sugar": false,
-            "image_path": "./images/vegetarian_rice_bowl.jpg"
+            "image_path": "./images/sushi/vegetarian_rice_bowl.jpg"
         }
     ],
     "Drinks": [
