@@ -4,6 +4,7 @@
 	import SideBar from "./components/SideBar.svelte";
 	import menu from "./menu.json";
 	import daily_menu from "./menu_daily.json";
+	import Popup from "./components/Popup.svelte";
 
 	let catagories = [
 		{ name: "Sandwiches", image_path: "./images/sandwich/sandwich.jpg" },
@@ -15,6 +16,7 @@
 </script>
 
 <main>
+	<Popup {daily_menu} bind:order />
 	<SideBar {catagories} bind:current_item />
 	<div class="card-container">
 		{#each menu[current_item] as drink}

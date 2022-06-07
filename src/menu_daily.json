@@ -5,7 +5,8 @@
         "is_vegetarian": false,
         "is_vegan": false,
         "contains_sugar": true,
-        "image_path": "./images/daily/kale_moa.jpg"
+        "image_path": "./images/daily/kale_moa.jpg",
+        "description": "Kale moa is a Samoan dish that is characterized by a balance of spicy, savory, and sweet flavors."
     },
     "Tuesday": {
         "name": "Potjiekos",
@@ -13,7 +14,8 @@
         "is_vegetarian": false,
         "is_vegan": false,
         "contains_sugar": false,
-        "image_path": "./images/daily/potjikos.jpg"
+        "image_path": "./images/daily/potjiekos.jpg",
+        "description": "Potjiekos is a traditional South African Afrikaner stew that is cooked over a fire in a cast-iron pot."
     },
     "Wednesday": {
         "name": "Hāngī",
@@ -21,7 +23,8 @@
         "is_vegetarian": true,
         "is_vegan": true,
         "contains_sugar": false,
-        "image_path": "./images/daily/hangi.jpg"
+        "image_path": "./images/daily/hangi.jpg",
+        "description": "Hāngī is an underground oven used by the Maoris that consists of a pit in which stones are heated, wrapped food is placed on stones"
     },
     "Thursday": {
         "name": "Panner Tikka Masala",
@@ -29,7 +32,8 @@
         "is_vegetarian": true,
         "is_vegan": false,
         "contains_sugar": true,
-        "image_path": "./images/daily/panner_tikka_masala.jpg"
+        "image_path": "./images/daily/paneer_tikka_masala.jpg",
+        "description": "Paneer Tikka Masala is a popular Indian curry where cubes of paneer, onions and peppers are marinated with yogurt and spices, grilled and then tossed in a creamy tomato based curry."
     },
     "Friday": {
         "name": "Chow mein",
@@ -37,6 +41,7 @@
         "is_vegetarian": true,
         "is_vegan": true,
         "contains_sugar": false,
-        "image_path": "./images/daily/chow_mein.jpg"
+        "image_path": "./images/daily/chow_mein.jpg",
+        "description": "Chow mein is a Chinese stir-fried noodle dish that is served with a variety of vegetables."
     }
 }

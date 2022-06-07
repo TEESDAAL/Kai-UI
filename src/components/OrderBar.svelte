@@ -9,6 +9,24 @@
     function submit_order() {
         order.length = 0;
     }
+
+    function remove_item(product) {
+        console.log("test");
+        // let item = {
+        //     name: product.name,
+        //     price: product.price,
+        //     quantity: 1,
+        //     image_path: product.image_path,
+        // };
+        // try {
+        //     order.find((obj) => {
+        //         return obj.name == item.name;
+        //     }).quantity--;
+        // } catch (UncaughtTypeError) {
+        //     order.push(item);
+        // }
+        // order = order;
+    }
 </script>
 
 <div class="order-bar">
@@ -25,6 +43,12 @@
                     x{drink.quantity} (${(drink.price * drink.quantity).toFixed(
                         2
                     )})
+                    <span
+                        id="remove-item"
+                        on:click={() => {
+                            console.log("test");
+                        }}>➖</span
+                    >
                 </p>
             </div>
         {/each}
@@ -34,6 +58,15 @@
 </div>
 
 <style>
+    #remove-item {
+        visibility: hidden;
+    }
+    .order-item:hover #remove-item {
+        visibility: visible;
+    }
+    .order-item:hover #remove-item:hover {
+        cursor: pointer;
+    }
     .order-bar {
         display: flex;
         flex-direction: column;
