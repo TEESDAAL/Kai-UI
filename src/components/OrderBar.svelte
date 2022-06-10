@@ -8,24 +8,27 @@
 
     function submit_order() {
         order.length = 0;
+        document.getElementById("order-popup").style.display = "flex";
     }
 
     function remove_item(product) {
-        console.log("test");
-        // let item = {
-        //     name: product.name,
-        //     price: product.price,
-        //     quantity: 1,
-        //     image_path: product.image_path,
-        // };
-        // try {
-        //     order.find((obj) => {
-        //         return obj.name == item.name;
-        //     }).quantity--;
-        // } catch (UncaughtTypeError) {
-        //     order.push(item);
-        // }
-        // order = order;
+        let item = {
+            name: product.name,
+            price: product.price,
+            quantity: 1,
+            image_path: product.image_path,
+        };
+
+        let x = order.find((obj) => {
+            return obj.name == item.name;
+        });
+        if (x.quantity > 1) {
+            x.quantity--;
+        } else {
+            order.splice(order.indexOf(x), 1);
+        }
+
+        order = order;
     }
 </script>
 
@@ -43,11 +46,8 @@
                     x{drink.quantity} (${(drink.price * drink.quantity).toFixed(
                         2
                     )})
-                    <span
-                        id="remove-item"
-                        on:click={() => {
-                            console.log("test");
-                        }}>➖</span
+                    <span id="remove-item" on:click={remove_item(drink)}
+                        >➖</span
                     >
                 </p>
             </div>

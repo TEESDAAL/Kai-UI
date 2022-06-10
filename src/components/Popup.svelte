@@ -40,7 +40,7 @@
 
 <div id="popup-container" on:click={hide}>
     <div id="popup" tabindex="0">
-        <h1>{daily_offering.name}</h1>
+        <h1 id="title">{daily_offering.name}</h1>
         <div id="image-text">
             <img
                 src={daily_offering.image_path}
@@ -78,12 +78,14 @@
     }
 
     img {
-        width: 20vw;
+        margin-top: 15px;
+        height: 40vh;
+        border-radius: 20px;
     }
     #image-text {
         display: flex;
         flex-direction: row;
-        font-size: 30px;
+        font-size: 25px;
     }
 
     #image-text img {
