@@ -10,6 +10,10 @@
 	let day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 	let current_day = day[new Date().getDay() - 1];
 
+	if (current_day === undefined) {
+		current_day = "Monday";
+	}
+
 	let catagories = [
 		{ name: "Sandwiches", image_path: "./images/sandwich/sandwich.jpg" },
 		{ name: "Sushi", image_path: "./images/sushi/sushi.jpg" },
@@ -18,24 +22,7 @@
 	let order = [];
 
 	let current_item = "Sandwiches";
-	function add_daily() {
-		console.log("test");
-		// let item = {
-		// 	name: menu_daily[current_day].name,
-		// 	price: menu_daily[current_day].price,
-		// 	quantity: 1,
-		// 	image_path: menu_daily[current_day].image_path,
-		// };
-		// try {
-		// 	order.find((obj) => {
-		// 		return obj.name == item.name;
-		// 	}).quantity++;
-		// } catch (UncaughtTypeError) {
-		// 	order.push(item);
-		// }
-
-		// order = order;
-	}
+	let show_receipt = false;
 </script>
 
 <main>
@@ -43,25 +30,12 @@
 	<SideBar {catagories} bind:current_item />
 	<div class="card-container">
 		{#each menu[current_item] as drink}
-			<Card
-				name={drink.name}
-				price={drink.price}
-				image_path={drink.image_path}
-				width={"14vw"}
-				bind:order
-			/>
+			<Card item={drink} width={"14vw"} bind:order />
 		{/each}
-		<Card
-			name={daily_menu[current_day].name}
-			price={daily_menu[current_day].price}
-			image_path={daily_menu[current_day].image_path}
-			width={"14vw"}
-			bind:order
-			on:click={add_daily}
-		/>
+		<Card item={daily_menu[current_day]} width={"14vw"} bind:order />
 	</div>
-	<OrderBar {order} />
-	<OrderPopup bind:order />
+	<OrderBar {order} bind:show_receipt />
+	<OrderPopup bind:order bind:show_receipt />
 </main>
 
 <style>

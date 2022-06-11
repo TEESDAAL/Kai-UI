@@ -1,5 +1,6 @@
 <script>
     export let order = [];
+    export let show_receipt;
     $: total = order
         .reduce((acc, cur) => {
             return acc + cur.price * cur.quantity;
@@ -7,8 +8,7 @@
         .toFixed(2);
 
     function submit_order() {
-        order.length = 0;
-        document.getElementById("order-popup").style.display = "flex";
+        show_receipt = true;
     }
 
     function remove_item(product) {
@@ -61,8 +61,12 @@
     #remove-item {
         visibility: hidden;
     }
+    .order-item > p {
+        display: flex;
+    }
     .order-item:hover #remove-item {
         visibility: visible;
+        display: flex;
     }
     .order-item:hover #remove-item:hover {
         cursor: pointer;
@@ -74,7 +78,7 @@
         align-items: center;
         background-color: hsl(0, 0%, 94%);
         height: 100%;
-        width: max(10vw, 200px);
+        width: 15vw;
         font-size: calc(max(10vw, 100px) / 7.5);
         padding: 5px;
         padding-top: 20px;

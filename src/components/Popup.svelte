@@ -5,7 +5,7 @@
     let day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
     let current_day = day[new Date().getDay() - 1];
     if (current_day === undefined) {
-        console.log("We don't serve on Weekends :(");
+        current_day = "Monday";
     }
     let daily_offering = daily_menu[current_day];
 

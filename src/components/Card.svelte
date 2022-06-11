@@ -1,34 +1,51 @@
 <script>
-    export let name;
-    export let price;
-    export let image_path;
+    export let item;
     export let width;
     export let order;
-
     function test() {
-        let item = {
-            name: name,
-            price: price,
+        let food = {
+            name: item.name,
+            price: item.price,
             quantity: 1,
-            image_path: image_path,
+            image_path: item.image_path,
         };
         try {
             order.find((obj) => {
-                return obj.name == item.name;
+                return obj.name == food.name;
             }).quantity++;
         } catch (UncaughtTypeError) {
-            order.push(item);
+            order.push(food);
         }
 
         order = order;
     }
+    console.log(item);
 </script>
 
 <div class="card" style="--width: {width}" on:click={test}>
-    <img src={image_path} alt="{name} image" />
+    <img src={item.image_path} alt="{item.name} image" />
     <div id="text-box">
-        <h3>{name}</h3>
-        <p>${price.toFixed(2)}</p>
+        <h3>{item.name}</h3>
+        <p>${item.price.toFixed(2)}</p>
+        {#if item.contains_sugar}
+            <p class="warning">Contains sugar</p>
+        {/if}
+        <div id="info">
+            {#if item.is_vegetarian}
+                <img
+                    class="info-img"
+                    src="./images/vegetarian.webp"
+                    alt="is vegetarian"
+                />
+            {/if}
+            {#if item.is_vegan}
+                <img
+                    class="info-img"
+                    src="./images/vegan.webp"
+                    alt="is vegan"
+                />
+            {/if}
+        </div>
     </div>
 </div>
 
@@ -65,5 +82,16 @@
     img {
         width: 100%;
         border-radius: 10px 10px 0 0;
+    }
+    #info {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    .warning {
+        color: red;
+    }
+    .info-img {
+        width: 30px;
     }
 </style>
